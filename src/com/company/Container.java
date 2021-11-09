@@ -59,23 +59,50 @@ public class Container {
      * @param a это элемент, по которому ищется значения, которое необходимо удалить
      */
     public void removeElement(int a) {
+        int flag = 0;
+        int count = 0;
         if (isEmpty()) {
             throw new IllegalArgumentException();
+        }
+        else if (size == 1) {
+            head = null;
+            flag = 1;
+            size--;
         }
         else {
             List p = head;
             List s = head;
-            for (; p.next != null; ) {
+            for (;p.next != null; ) {
                 if (p.data == a) {
-                    s.next = p.next;
-                    p.next = null;
-                    size--;
-                } else {
+                    if (p.data == head.data) {
+                        head = p.next;
+                        p = null;
+                        size--;
+                        flag = 1;
+                        count = 1;
+                        break;
+                    }
+                    else {
+                        s.next = p.next;
+                        p.next = null;
+                        size--;
+                        flag = 1;
+                        count = 1;
+                    }
+                }
+                else {
                     s = p;
                     p = p.next;
                 }
             }
+            if (count == 0 && p.data == a) {
+                p = null;
+                s.next = null ;
+                size--;
+                flag = 1;
+            }
         }
+        if (flag == 0) throw new IllegalArgumentException();
     }
 
 

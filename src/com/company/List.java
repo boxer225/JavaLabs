@@ -1,5 +1,6 @@
 package com.company;
 /**
+ * Это класс, который представляет собой односвязный список
 * @author Andrey Sarychev
 */
 

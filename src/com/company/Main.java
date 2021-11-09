@@ -6,7 +6,7 @@ import java.util.InputMismatchException;
 public class Main {
 
     public static void main(String[] args) {
-        Container array = new Container();
+        Container list = new Container();
 
         Scanner scanner = new Scanner(System.in);
 
@@ -32,8 +32,8 @@ public class Main {
                         int j = scanner.nextInt();
                         System.out.println(j);
 
-                        array.addElementToArray(j);
-                        System.out.print(array.toString() + " ");
+                        list.addElementToArray(j);
+                        System.out.print(list.toString() + " ");
                     } catch (InputMismatchException e) {
                         System.out.println("ОШИБКА!!!");
                     }
@@ -46,11 +46,11 @@ public class Main {
                         int j = scanner.nextInt();
                         System.out.println(j);
                         try {
-                            array.removeElement(j);
+                            list.removeElement(j);
                         } catch (Exception e) {
                             System.out.print("ОШИБКА!!!!");
                         }
-                        System.out.print(array.toString() + " ");
+                        System.out.print(list.toString() + " ");
                     } else {
                         System.out.println("Вы ввели не целочисленное значение");
                     }
@@ -65,7 +65,7 @@ public class Main {
 
                         System.out.println("Ваш элемент:   ");
                         try {
-                            System.out.print(array.PopElement(j));
+                            System.out.print(list.PopElement(j));
                         } catch (Exception e) {
                             System.out.print("ОШИБКА!!!!!!");
                         }

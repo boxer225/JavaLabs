@@ -5,13 +5,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class ContainerTest {
 
     @org.junit.jupiter.api.Test
-    void TestAddElementToArray() {
+    void TestAddElementToList() {
         try {
-            Container array = new Container();
-            array.addElementToArray(3);
-            array.addElementToArray(5);
-            array.addElementToArray(6);
-            assertEquals("3 5 6", array.toString());
+            Container list = new Container();
+            list.addElementToArray(3);
+            list.addElementToArray(5);
+            list.addElementToArray(6);
+            assertEquals("3 5 6", list.toString());
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -21,12 +21,16 @@ class ContainerTest {
     @org.junit.jupiter.api.Test
     void TestRemoveElement() {
         try {
-            Container intArray2 = new Container();
-            intArray2.addElementToArray(3);
-            intArray2.addElementToArray(5);
-            intArray2.addElementToArray(8);
-            intArray2.removeElement(5);
-            assertEquals("3 8", intArray2.toString());
+            Container list = new Container();
+            list.addElementToArray(3);
+            list.addElementToArray(5);
+            list.addElementToArray(8);
+            list.addElementToArray(15);
+            list.addElementToArray(42);
+            list.removeElement(8);
+            list.removeElement(42);
+            list.removeElement(3);
+            assertEquals("5 15", list.toString());
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -35,13 +39,13 @@ class ContainerTest {
     @org.junit.jupiter.api.Test
     void TestPopElement() {
         try {
-            Container intArray2 = new Container();
-            intArray2.addElementToArray(3);
-            intArray2.addElementToArray(5);
-            intArray2.addElementToArray(8);
-            intArray2.removeElement(5);
-            intArray2.removeElement(8);
-            String h = intArray2.PopElement(3) + " ";
+            Container list = new Container();
+            list.addElementToArray(3);
+            list.addElementToArray(5);
+            list.addElementToArray(8);
+            list.removeElement(5);
+            list.removeElement(8);
+            String h = list.PopElement(3) + " ";
             assertEquals("3 ", h);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
